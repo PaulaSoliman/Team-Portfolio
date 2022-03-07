@@ -1,0 +1,144 @@
+#home .slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  #home  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  #home  .slide.current {
+    opacity: 1;
+  }
+  
+  #home  .slide .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    color: white;
+    text-align: center;
+  }
+  #home  .slide .content h1{
+      font-size: 80px;
+      font-weight: bold;
+  }
+  #home  .slide.current .content {
+    opacity: 1;
+    transition: all 0.7s ease-in-out 0.3s;
+  }
+  
+  #home .buttons button#next {
+    position: absolute;
+    top: calc(50% + 60px);
+    left: 0%;
+  }
+  
+  #home  .buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+  }
+  
+  #home  .buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 5px;
+    outline: none;
+    transition: color 0.5s, background-color 0.5s, border 0.5s;
+  }
+  
+  #home  .buttons button:hover {
+    background-color: #fff;
+    color: var(--maincolor);
+    border: 2px solid var(--maincolor) !important;
+  }
+  
+  @media (max-width: 990px) {
+    #home  .slide .content h1{
+        font-size: 50px;
+    }
+    #home .slide .content {
+        position: absolute;
+        top:35% !important;
+        left: 0%;
+        transform: translate(0%,0%);
+        opacity: 0;
+        
+      }
+  }
+  
+  /* Backgorund Images */
+   
+  #home  .slide:first-child {
+    background: url(../images/images/slideshow-1.jpg) no-repeat
+      center top/cover;
+  }
+  #home  .slide:nth-child(2) {
+    background: url(../images/images/slideshow-2.jpg) no-repeat
+      center top/cover;
+  }
+  #home  .slide:nth-child(3) {
+    background: url(../images/images/slideshow-3.jpg) no-repeat
+      center top/cover;
+  }
+
+  /* Button to About */
+  #home .goToAbout{
+    width: 40px;
+    height: 70px;
+    border: solid 2px white;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: border 0.5s;
+  }
+  #home .goToAbout span{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 50%;
+    animation: movePoint 1.5s infinite;
+  }
+  #home .goToAbout:hover{
+    border: solid 2px var(--maincolor);
+  }
+  #home .goToAbout:hover span{
+    background-color: var(--maincolor);
+  }
+  @keyframes movePoint{
+    0%{
+      top: 10%;
+      opacity: 1;
+    }
+    100%{
+      top: 80%;
+      opacity: 0;
+    }
+  }
+  @media screen and (max-width:990px) {
+    #home .goToAbout{
+      width: 30px;
+    height: 60px;
+    bottom: 2%;
+    }
+  }
